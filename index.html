@@ -11,23 +11,100 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <p>Nome e Cognome</p>
-    <input id="name" type="text" placeholder="name">
+    <!-- Main -->
+    <main class="container">
+        <!-- Form -->
+        <section id="form-section" class="m-5">
+            <!-- Card -->
+            <div class="card">
+                <!-- Card body -->
+                <div class="card-body">
+                    <!-- Card title -->
+                    <h5 class="card-title">Inserisci i tuoi dati</h5>
+                    <hr>
+                    <!-- Content -->
+                    <div class="row row-cols-1 row-cols-3">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="kms" class="form-label">Chilometri</label>
+                            <input type="number" class="form-control" id="kms" min="1" max="1000">
+                        </div>
+                        <div class="col">
+                            <label for="age" class="form-label">Fascia d'età</label>
+                            <select id="age" class="form-select">
+                                <option selected value="">Adulto</option>
+                                <option value="minorenne">Minorenne</option>
+                                <option value="over">Over 65</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card footer -->
+                <div class="card-footer d-flex justify-content-end gap-3">
+                    <!-- Content -->
+                    <button class="btn btn-secondary" id="reset-button">Annulla</button>
+                    <button class="btn btn-primary" id="confirm-button">Conferma</button>
+                </div>
+            </div>
+        </section>
 
-    <p>Km da percorrere</p>
-    <input id="km" type="text" placeholder="km">
+        <!-- Ticket section -->
+        <section id="ticket-section" class="m-5 d-none">
+            <!-- Card -->
+            <div class="card mb-3">
+                <!-- Content -->
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="img/Frecciarossa_1000_nuova_livrea.jpg" class="img-fluid rounded-start" alt="treno">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Il tuo biglietto</h5>
+                            <hr>
+                            <h4 id="passenger-name">Matteo Cantafio</h4>
+                            <div class="row row-cols-1 row-cols-4">
+                                <div class="col">
+                                    <h6>Tariffa</h6>
+                                    <div id="rate">Tariffa Ordinaria</div>
+                                </div>
+                                <div class="col">
+                                    <h6>Carrozza</h6>
+                                    <div id="car">9</div>
+                                </div>
+                                <div class="col">
+                                    <h6>PNR</h6>
+                                    <div id="pnr">95844</div>
+                                </div>
+                                <div class="col">
+                                    <h6>Totale</h6>
+                                    <div id="price">€ 10</div>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">Accetto termini e condizioni</p>
+                            <div class="mt-5 d-flex justify-content-end">
+                                <button class="btn btn-success" id="buy-button">Conferma e acquista</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <p>Età</p>
-    <input id="age" type="text" placeholder="age">
-    <button id="button" type="button"></button>
-    <p id="pName">1</p>
-    <p id="pKm">2</p>
-    <p id="pAge">3</p>
+    <!-- Javascript -->
     <script src="script.js"></script>
 </body>
 
